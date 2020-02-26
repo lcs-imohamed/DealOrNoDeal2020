@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  DealOrNoDeal
+//  SealOrNoSeal
 //
 //  Created by Gordon, Russell on 2020-02-04.
 //  Copyright © 2020 Gordon, Russell. All rights reserved.
@@ -71,9 +71,17 @@ var briefcaseValues = [100, 500, 1_000, 5_000, 10_000, 25_000, 50_000, 100_000, 
 //
 // An integer between 1 and 10, inclusive
 func getBriefcaseOpened(onTurn turn: Int) -> Int {
-    
+  
     // STUDENTS: Complete this function
-    
+    while true{
+        //Ask user for input
+        print("Which briefcase did you chose on turn \(turn)?")
+        guard let inputGiven2 = readLine() else{
+            //No input given return to top of loop and ask again
+            continue 
+        }
+
+    }
     
     // The statement below can be modified
     return 0
@@ -94,6 +102,17 @@ for turn in 1...briefcasesOpened {
 // STUDENTS: Do any remaining calculations you might need below.
 
 
+func findAverage() -> Double {
+    
+    //Iterate over values and add them up
+    var runningTotal = 0
+    for value in briefcaseValues{
+        runningTotal += value
+    }
+    
+    return Double(runningTotal) / Double(10-briefcasesOpened)
+}
+var average = findAverage()
 
 
 //
