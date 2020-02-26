@@ -77,10 +77,15 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
         //Ask user for input
         print("Which briefcase did you chose on turn \(turn)?")
         guard let inputGiven2 = readLine() else{
+            
             //No input given return to top of loop and ask again
-            continue 
+            continue
         }
-
+        //Attempt to make input into an into an integer
+        guard let integerGiven2 = Int(inputGiven2) else {
+            //If the input cannot be made into an integer return to the top of loop and ask again
+            continue
+        }
     }
     
     // The statement below can be modified
