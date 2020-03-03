@@ -29,7 +29,7 @@ while true {
         
         // Could not make input into an integer, so return to top and ask again
         continue
-
+        
     }
     
     // Check that integer is in desired range
@@ -71,11 +71,11 @@ var briefcaseValues = [100, 500, 1_000, 5_000, 10_000, 25_000, 50_000, 100_000, 
 //
 // An integer between 1 and 10, inclusive
 func getBriefcaseOpened(onTurn turn: Int) -> Int {
-  
+    
     // STUDENTS: Complete this function
     while true{
         //Ask user for input
-        print("Which briefcase did you chose on turn \(turn)?")
+        print("Which briefcase did you choose on turn \(turn)?")
         guard let inputGiven2 = readLine() else{
             
             //No input given return to top of loop and ask again
@@ -83,13 +83,23 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
         }
         //Attempt to make input into an into an integer
         guard let integerGiven2 = Int(inputGiven2) else {
+            
             //If the input cannot be made into an integer return to the top of loop and ask again
             continue
         }
+        
+        //Check that the integer is in the desired range
+        
+        guard integerGiven2 > 0, integerGiven2 < 11 else{
+            
+            //If integer is not in desired range return to the top and ask again
+            continue
+        }
+        
+        //If we made it here the input is valid
+        return integerGiven2
     }
     
-    // The statement below can be modified
-    return 0
     
 }
 
@@ -105,6 +115,35 @@ for turn in 1...briefcasesOpened {
 }
 
 // STUDENTS: Do any remaining calculations you might need below.
+//Ask for banker offer
+func bankerOfferFunc()-> Int {
+    while true {
+        //Ask for input
+        print("What is the banker's offer?")
+        guard let inputGiven3 = readLine() else {
+            
+            //No input given
+            continue
+        }
+        //Attempt to make input into an into an integer
+        guard let integerGiven3 = Int(inputGiven3) else {
+            
+            //If the input cannot be made into an integer return to the top of loop and ask again
+            continue
+        }
+        
+        //Check that the integer is in the desired range
+        
+        guard integerGiven3 > 0, integerGiven3 < 11 else{
+            
+            //If integer is not in desired range return to the top and ask again
+            continue
+        }
+        
+        //If we made it here the input is valid
+        return integerGiven3
+    }
+}
 
 
 func findAverage() -> Double {
@@ -119,9 +158,11 @@ func findAverage() -> Double {
 }
 var average = findAverage()
 
+//Check to see if the banker offer is greater than the average
 
-//
+
 // OUTPUT SECTION OF PROGRAM
 //
 
 // STUDENTS: Now tell the player whether to take the deal, or not.
+
