@@ -159,10 +159,14 @@ func findAverage() -> Double {
 var average = findAverage()
 
 //Check to see if the banker offer is greater than the average
-
-
-// OUTPUT SECTION OF PROGRAM
-//
-
-// STUDENTS: Now tell the player whether to take the deal, or not.
-
+if average > integerGiven3{
+    print("Deal")
+}
+    
+    
+    // OUTPUT SECTION OF PROGRAM
+    //
+    
+    // STUDENTS: Now tell the player whether to take the deal, or not.
+    
+}
