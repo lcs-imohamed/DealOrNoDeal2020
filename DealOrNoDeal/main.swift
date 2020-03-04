@@ -116,7 +116,7 @@ for turn in 1...briefcasesOpened {
 
 // STUDENTS: Do any remaining calculations you might need below.
 //Ask for banker offer
-func bankerOfferFunc()-> Int {
+func bankerOfferFunc() -> Double {
     while true {
         //Ask for input
         print("What is the banker's offer?")
@@ -132,19 +132,13 @@ func bankerOfferFunc()-> Int {
             continue
         }
         
-        //Check that the integer is in the desired range
-        
-        guard integerGiven3 > 0, integerGiven3 < 11 else{
-            
-            //If integer is not in desired range return to the top and ask again
-            continue
-        }
+     
         
         //If we made it here the input is valid
-        return integerGiven3
+        return Double(integerGiven3)
     }
 }
-
+var bankerOffer = bankerOfferFunc()
 
 func findAverage() -> Double {
     
@@ -159,14 +153,18 @@ func findAverage() -> Double {
 var average = findAverage()
 
 //Check to see if the banker offer is greater than the average
-if average > integerGiven3{
+if average > bankerOffer {
     print("Deal")
 }
-    
+if average > bankerOffer {
+    print("Deal")
+}else{
+    print("No Deal")
+}
     
     // OUTPUT SECTION OF PROGRAM
     //
     
     // STUDENTS: Now tell the player whether to take the deal, or not.
     
-}
+
