@@ -104,12 +104,14 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
 }
 
 // Loop and ask what briefcases have been opened
+// Used this loop to determine what briefcases were opened and effectively remove them from array in order to prevent the array from going out of bounds.
 for turn in 1...briefcasesOpened {
     
     // Get which briefcase was opened
     let briefcaseOpenedThisTime = getBriefcaseOpened(onTurn: turn)
     
     // STUDENTS: Now that you know what briefcase is opened... what might you do to the array value(s)?
+    
     briefcaseValues[briefcaseOpenedThisTime - 1] = 0
     
 }
